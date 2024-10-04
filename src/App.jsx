@@ -1,25 +1,17 @@
 import React, { useState } from "react";
-
+import UserList from "./components/UserList";
+import ProductList from "./components/ProductList";
 
 const App = () => {
-  
-  const number = [1, 2, 3, 7, ,9,4];
+  const data = [
+    { username: "shiva", email: "shiav@doe.com", location: "india" },
+    { username: "rosch", email: "brock@doe.com", location: "usa" },
+    { username: "jazy", email: "roman@doe.com", location: "greece" },
+  ];
   return (
     <div>
-      <main>
-        <ul>
-          {number.map((num) => {
-            const randomColor = `#${Math.floor(
-              Math.random() * 16777215
-            ).toString(16)}`;
-            return (
-              <li key={num} style={{ color: randomColor }}>
-                {num}
-              </li>
-            );
-          })}
-        </ul>
-      </main>
+      <ProductList/>
+      <UserList />
     </div>
   );
 };
