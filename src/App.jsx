@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Greeting from './components/Greeting';
+import ProductInfo from './components/ProductInfo';
 
 const App = () => {
   const [name, setName] = useState("");
@@ -21,6 +22,7 @@ const App = () => {
         onChange={handleInputChange}
       />
       <Greeting name={name} date={date} />
+      <ProductInfo/>
     </div>
   );
 };
