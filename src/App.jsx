@@ -10,8 +10,8 @@ const App = () => {
   ];
   return (
     <div>
-      <ProductList/>
       <UserList />
+      <ProductList/>
     </div>
   );
 };
