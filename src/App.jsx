@@ -1,19 +1,24 @@
-import React from 'react';
-import Container from './components/Container';
+import React from "react";
+import Cart from "./components/Cart";
+
+const Validpassword = () => {
+  return <div>Password is valid!</div>;
+};
+
+const Invalidpassword = () => {
+  return <div>Password is invalid!</div>;
+};
+
+
+const Password = ({ isValid }) => {
+  return isValid ? <Validpassword /> : <Invalidpassword />;
+};
 
 const App = () => {
   return (
     <div>
-      <Container>
-        <p>This is some content inside the container.</p>
-        <button>Click Me!</button>
-      </Container>
-
-
-      <Container>
-        <h3>Another container with different content!</h3>
-        <button>submit</button>
-      </Container>
+      <Password isValid={false} />
+      <Cart />
     </div>
   );
 };
