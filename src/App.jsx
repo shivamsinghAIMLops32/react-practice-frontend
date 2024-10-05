@@ -1,26 +1,16 @@
-import React from "react";
-import Cart from "./components/Cart";
-
-const Validpassword = () => {
-  return <div>Password is valid!</div>;
-};
-
-const Invalidpassword = () => {
-  return <div>Password is invalid!</div>;
-};
-
-
-const Password = ({ isValid }) => {
-  return isValid ? <Validpassword /> : <Invalidpassword />;
-};
+import React, { useState } from 'react';
+import Increment from './components/Increment';
+import Decrement from './components/Decrement';
 
 const App = () => {
-  return (
-    <div>
-      <Password isValid={false} />
-      <Cart />
-    </div>
-  );
-};
+    const [count, setCount] = useState(0);
+    
+    return (
+        <div>
+            <Increment count={count} updateCount={() => setCount(count + 1)} ><h2>children : {count}</h2></Increment>
+            <Decrement count={count} updateCount={() => setCount(count - 1)} ><h2>children : {count}</h2></Decrement>
+        </div>
+    );
+}
 
 export default App;
