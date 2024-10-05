@@ -1,14 +1,39 @@
 import React, { useState } from 'react';
-import Increment from './components/Increment';
-import Decrement from './components/Decrement';
+
 
 const App = () => {
     const [count, setCount] = useState(0);
+    const [movies,setMovies] = useState([
+      {
+          id: 1,
+          title: "The Last Adventure",
+          genre: "Action",
+          releaseYear: 2023,
+          rating: 2
+      },
+      {
+          id: 2,
+          title: "Love in the Time of Robots",
+          genre: "Romantic Comedy",
+          releaseYear: 2022,
+          rating: 7.2
+      },
+      {
+          id: 3,
+          title: "Dark Shadows",
+          genre: "Horror",
+          releaseYear: 2021,
+          rating: 6.8
+      }
+  ]);
+  
+  
     
     return (
         <div>
-            <Increment count={count} updateCount={() => setCount(count + 1)} ><h2>children : {count}</h2></Increment>
-            <Decrement count={count} updateCount={() => setCount(count - 1)} ><h2>children : {count}</h2></Decrement>
+            
+            {movies.map((value)=>value.rating>5 ? <li key={Math.random()}><h3>{value.title}</h3><br /></li>:"")}
+
         </div>
     );
 }
